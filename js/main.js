@@ -61,8 +61,58 @@ function carregarAbaDinamica(idAba, arquivo, evento) {
     });
 }
 
+// ─── LÓGICA DO JUMPSCARE CMD ───
+function triggerJumpscare() {
+  const gifUrl = "https://preview.redd.it/how-to-make-an-animation-that-simulate-while-it-execute-a-v0-u2u9qdv97v8b1.gif?width=668&auto=webp&s=ac1807f4de40706a6e9c07e896edd0436c7c47bf";
+  
+  // Quantidade de janelas falsas
+  const numWindows = 25;
+  const container = document.createElement('div');
+  container.id = 'jumpscare-container';
+  container.style.position = 'fixed';
+  container.style.top = '0';
+  container.style.left = '0';
+  container.style.width = '100vw';
+  container.style.height = '100vh';
+  container.style.zIndex = '999999';
+  container.style.pointerEvents = 'none'; // Não bloqueia cliques
+  document.body.appendChild(container);
+
+  // Som opcional de erro do windows para dar mais susto
+  const errorSound = new Audio('https://www.myinstants.com/media/sounds/windows-xp-error.mp3');
+  errorSound.volume = 0.5;
+  // O som pode não tocar logo de cara devido a políticas do navegador, mas se o usuário já tiver interagido, toca
+  errorSound.play().catch(() => {});
+
+  for (let i = 0; i < numWindows; i++) {
+    const img = document.createElement('img');
+    img.src = gifUrl; // Usando URL exata sem parâmetros extras para não quebrar o CDN do Reddit
+    img.className = 'jumpscare-cmd';
+    
+    // Posições e tamanhos aleatórios
+    const width = Math.random() * 400 + 300; // entre 300 e 700px
+    const top = Math.random() * 80; // até 80% da altura
+    const left = Math.random() * 80; // até 80% da largura
+
+    img.style.width = width + 'px';
+    img.style.top = top + 'vh';
+    img.style.left = left + 'vw';
+    
+    // Atraso de alguns milissegundos para parecer que estão abrindo em sequência
+    setTimeout(() => {
+      container.appendChild(img);
+    }, i * 15); // Bem rápido
+  }
+
+  // Remove tudo depois de 500ms (meio segundo como pedido)
+  setTimeout(() => {
+    container.remove();
+  }, 500);
+}
+
 // Carregar a aba Roster automaticamente ao abrir a página
 document.addEventListener("DOMContentLoaded", () => {
+  triggerJumpscare();
   carregarAbaDinamica('aba-roster', 'roster', null);
 });
 
