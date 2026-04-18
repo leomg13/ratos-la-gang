@@ -29,7 +29,7 @@ function carregarAbaDinamica(idAba, arquivo, evento) {
   }
 
   // Busca o arquivo HTML dinamicamente
-  fetch(`./assets/pages/${arquivo}.html`)
+  fetch(`./pages/${arquivo}.html`)
     .then(response => {
         if (!response.ok) throw new Error('Erro ao carregar a página');
         return response.text();
