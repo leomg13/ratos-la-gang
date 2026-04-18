@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ratos La Gang | Season '26</title>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/AaQNfr5.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Inter:wght@300;500;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+  <div id="sexta-bar">
+    <span style="color: var(--neon);">>_ SEXTÔMETRO</span>
+    <div class="progress-container">
+      <div class="progress-fill" id="sexta-fill"></div>
+    </div>
+    <span id="sexta-text" style="color: #fff;">Calculando...</span>
+  </div>
+
+  <nav>
+    <a href="#hero">INÍCIO</a>
+    <a href="#conteudo">O BUEIRO</a>
+    <a href="#santuario-ancora">MESTRE GIGINICIU</a>
+  </nav>
+
+  <section class="hero" id="hero">
+    <h1 class="glitch">RATOS <span>LA GANG</span></h1>
+    <p>ratos</p>
+    <p style="font-size: 1rem; margin-top: 20px; color: var(--neon);">"a gangue."</p>
+  </section>
+
+  <div class="jogos-container">
+    <div class="jogo-card"
+      style="background-image: linear-gradient(transparent, #000), url('https://media.tenor.com/W_cH9yl1uNkAAAAM/malphite.gif');">
+      LEAGUE OF LEGENDS
+    </div>
+    <div class="jogo-card"
+      style="background-image: linear-gradient(transparent, #000), url('https://media.tenor.com/E6ynXrh8lNoAAAAM/cs-go-dance.gif');">
+      COUNTER-STRIKE 2
+    </div>
+    <div class="jogo-card"
+      style="background-image: linear-gradient(transparent, #000), url('https://media.tenor.com/iqkII5B1ymUAAAAM/roblox-memes.gif');">
+      ROBLOX
+    </div>
+  </div>
+
+  <section class="conteudo" id="conteudo">
+    <h2 class="section-title glitch">ARQUIVOS DO BUEIRO</h2>
+
+    <div class="tabs-menu">
+      <button class="tab-btn active" onclick="carregarAbaDinamica('aba-roster', 'roster', event)">ROSTER & ELOS</button>
+      <button class="tab-btn" onclick="carregarAbaDinamica('aba-smokes', 'taticas', event)">TÁTICAS</button>
+      <button class="tab-btn" onclick="carregarAbaDinamica('aba-midia', 'midia', event)">MÍDIA & CLIPES</button>
+      <button class="tab-btn" onclick="carregarAbaDinamica('aba-cineratos', 'cineratos', event)">CINERATOS</button>
+      <button class="tab-btn" onclick="carregarAbaDinamica('aba-receitas', 'receitas', event)">RECEITAS DO CORY</button>
+    </div>
+
+    <div id="conteudo-dinamico"></div></section>
+
+  <section id="santuario-ancora" style="padding: 100px 5%; background: #000;">
+    <div class="santuario">
+      <h1>GIGINICIU</h1>
+      <h3 style="color: #fff; font-family: 'Share Tech Mono'; letter-spacing: 5px; margin-bottom: 30px;">O MAIOR MESTRE
+        DA RATOS</h3>
+
+      <div class="grid" style="text-align: left;">
+        <div class="card" style="border-color: var(--yellow); background: #111;">
+          <h3 style="color: var(--yellow);">"A LENDA VIVA"</h3>
+          <p style="color: #aaa; font-style: italic;">"Existem jogadores bons, existem pro-players, e existe o
+            Giginiciu. A diferença? Ele joga com a mente do adversário. E às vezes com a do próprio time."</p>
+        </div>
+        <div class="card"
+          style="border-color: #555; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+          <h3 style="color: #fff;">GALERIA DE MEMES</h3>
+          <button class="btn" style="width:100%; margin-top:10px; background:#222; border:1px solid #555; color:#aaa;">[
+            ABRIR ARQUIVO MESTRE ]</button>
+        </div>
+        <div class="card" style="border-color: #555;">
+          <h3 style="color: #fff;">HIGHLIGHT DO MESTRE</h3>
+          <div
+            style="width:100%; height:150px; background:#000; border:1px dashed var(--yellow); display:flex; justify-content:center; align-items:center; color:var(--yellow); font-family:'Orbitron';">
+            INSERIR CLIP AQUI
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer
+    style="text-align: center; padding: 40px; background: #050505; color: #555; font-family: 'Share Tech Mono'; border-top: 1px solid #111;">
+    &copy; 2026 RATOS LA GANG. CRIADO NO ESGOTO. <br>
+    "Biruled aprova."
+  </footer>
+
+  <div class="denuncia-float" id="caixa-denuncia">
+    <button class="fechar-btn" onclick="fecharCaixa()">X</button>
+
+    <h4 style="font-family: 'Orbitron'; color: var(--neon); margin-bottom: 10px;">> SISTEMA DE DENÚNCIAS</h4>
+    <p style="font-size: 0.7rem; color: #aaa; margin-bottom: 10px;">O cara trollou a ranked? Reporta aqui.</p>
+    <input type="text" placeholder="Seu Nick">
+    <input type="text" placeholder="Nick do Lixo">
+    <textarea rows="3" placeholder="O que o animal fez?"></textarea>
+
+    <button onclick="alert('Denúncia enviada pro bueiro. 🐀 Nossa gangue vai cobrar.'); fecharCaixa();">ENVIAR
+      REPORT</button>
+  </div>
+
+  <img src="https://media.tenor.com/V9XG4Lp_SN0AAAAj/rat-dance.gif" class="rato-animado" id="rato-mascote"
+    alt="Rato correndo">
+
+  <script src="./assets/js/script.js" defer></script>
+
+</body>
+
+</html>
