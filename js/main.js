@@ -29,7 +29,7 @@ function carregarAbaDinamica(idAba, arquivo, evento) {
   }
 
   // Busca o arquivo HTML dinamicamente
-  fetch(`./pages/${arquivo}.html`)
+  fetch(`./views/${arquivo}.html`)
     .then(response => {
         if (!response.ok) throw new Error('Erro ao carregar a página');
         return response.text();
@@ -38,7 +38,7 @@ function carregarAbaDinamica(idAba, arquivo, evento) {
         document.getElementById('conteudo-dinamico').innerHTML = html;
         
         // Se a aba for táticas, reatacha os eventos de clique do mural (Cavalo de Troia)
-        if (arquivo === 'taticas') {
+        if (arquivo === 'tactics') {
             document.querySelectorAll('.mural-card').forEach(card => {
               card.addEventListener('click', () => {
                 if (Math.random() < 0.2) {
